@@ -16,7 +16,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		88611F492DD1E7FD00C11652 /* Exceptions for "PokeWiki" folder in "PokeWiki" target */ = {
+		88611EE72DD1DEDB00C11652 /* Exceptions for "PokeWiki" folder in "PokeWiki" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -26,10 +26,10 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		88611F442DD1E7FD00C11652 /* PokeWiki */ = {
+		88611ED72DD1DEDA00C11652 /* PokeWiki */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				88611F492DD1E7FD00C11652 /* Exceptions for "PokeWiki" folder in "PokeWiki" target */,
+				88611EE72DD1DEDB00C11652 /* Exceptions for "PokeWiki" folder in "PokeWiki" target */,
 			);
 			path = PokeWiki;
 			sourceTree = "<group>";
@@ -52,7 +52,8 @@
 		88611ECC2DD1DEDA00C11652 = {
 			isa = PBXGroup;
 			children = (
-				88611F442DD1E7FD00C11652 /* PokeWiki */,
+				88611ED72DD1DEDA00C11652 /* PokeWiki */,
+				88611F0A2DD1DF6300C11652 /* Frameworks */,
 				88611ED62DD1DEDA00C11652 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +64,13 @@
 				88611ED52DD1DEDA00C11652 /* PokeWiki.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		88611F0A2DD1DF6300C11652 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,7 +89,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				88611F442DD1E7FD00C11652 /* PokeWiki */,
+				88611ED72DD1DEDA00C11652 /* PokeWiki */,
 			);
 			name = PokeWiki;
 			packageProductDependencies = (
