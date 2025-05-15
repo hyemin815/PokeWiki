@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		88611F062DD1DF4800C11652 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 88611F052DD1DF4800C11652 /* SnapKit */; };
 		88611F0C2DD1DF6300C11652 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 88611F0B2DD1DF6300C11652 /* RxSwift */; };
+		8861208E2DD56BB800C11652 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8861208D2DD56BB800C11652 /* RxCocoa */; };
+		886120902DD56BBE00C11652 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 8861208F2DD56BBE00C11652 /* RxRelay */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +43,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8861208E2DD56BB800C11652 /* RxCocoa in Frameworks */,
 				88611F0C2DD1DF6300C11652 /* RxSwift in Frameworks */,
+				886120902DD56BBE00C11652 /* RxRelay in Frameworks */,
 				88611F062DD1DF4800C11652 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				88611ED72DD1DEDA00C11652 /* PokeWiki */,
-				88611F0A2DD1DF6300C11652 /* Frameworks */,
+				8861208C2DD56BB800C11652 /* Frameworks */,
 				88611ED62DD1DEDA00C11652 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,7 +70,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		88611F0A2DD1DF6300C11652 /* Frameworks */ = {
+		8861208C2DD56BB800C11652 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -95,6 +99,8 @@
 			packageProductDependencies = (
 				88611F052DD1DF4800C11652 /* SnapKit */,
 				88611F0B2DD1DF6300C11652 /* RxSwift */,
+				8861208D2DD56BB800C11652 /* RxCocoa */,
+				8861208F2DD56BBE00C11652 /* RxRelay */,
 			);
 			productName = PokeWiki;
 			productReference = 88611ED52DD1DEDA00C11652 /* PokeWiki.app */;
@@ -382,6 +388,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 88611F092DD1DF5900C11652 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		8861208D2DD56BB800C11652 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88611F092DD1DF5900C11652 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		8861208F2DD56BBE00C11652 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88611F092DD1DF5900C11652 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

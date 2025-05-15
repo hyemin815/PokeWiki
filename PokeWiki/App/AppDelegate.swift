@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 디바이스 전체 화면 크기만큼의 UIWindow 생성
         let window = UIWindow(frame: UIScreen.main.bounds)
                 
-        window.rootViewController = UINavigationController(rootViewController: ViewController())
+        window.rootViewController = UINavigationController(rootViewController: MainViewController())
         window.makeKeyAndVisible()
         self.window = window
         return true
