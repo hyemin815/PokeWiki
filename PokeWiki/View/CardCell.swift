@@ -2,10 +2,10 @@
 
 import UIKit
 
-class ImageCell: UICollectionViewCell {
+class CardCell: UICollectionViewCell {
     // 나중에 ImageCell을 꺼내쓸 때 이름표
-    static let id = "ImageCell"
-
+    static let reuseIdentifier = "CardCell"
+    
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -33,4 +33,28 @@ class ImageCell: UICollectionViewCell {
         imageView.image = nil
     }
     
+    // 데이터를 받아서 Cell을 구성
+    func configure(with pokemonImage: PokemonList) {
+        // PokemonList의 id 값 가져와서 사용
+        guard let id = pokemonImage.id else { return }
+        let urlString =  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(id).png"
+        guard let url = URL(string: urlString) else { return }
+        
+        // 이미지 다운로드 같은 무거운 작업은 백그라운드에서 작업
+        DispatchQueue.global().async { [weak self] in
+            // url에 있는 이미지 데이터 다운로드 시도
+            if let data = try? Data(contentsOf: url) {
+                // data를 이미지로 변환 시도, 에러를 던지지 않기 때문에 try? 불필요
+                if let image = UIImage(data: data) {
+                    
+                    // 다운받은 이미지 업데이트는 main 스레드에서 작업
+                    DispatchQueue.main.async {
+                        self?.imageView.image = image
+                    }
+                }
+            }
+        }
+    }
 }
+
+
