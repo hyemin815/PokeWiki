@@ -5,7 +5,7 @@ import Foundation
 struct PokemonDetailResponse: Codable {
     let id: Int
     let name: String
-    let types: [PokemonType]
+    let types: [PokemonTypeSlot]
     let height: Int
     let weight: Int
 }

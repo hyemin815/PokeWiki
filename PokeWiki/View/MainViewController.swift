@@ -81,6 +81,14 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        // 선택한 셀의 포켓몬 id 가져오기
+        let selectedPokemon = pokemonList[indexPath.row]
+        guard let id = selectedPokemon.id else { return }
+        
+        // 선택한 포켓몬 id로 DetailViewController 생성 후 화면 전환
+        let detailVC = DetailViewController(pokemonID: id)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 

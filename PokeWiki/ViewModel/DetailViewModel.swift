@@ -5,7 +5,7 @@ import RxSwift
 class DetailViewModel {
     
     private var disposeBag = DisposeBag()
-    private let pokemonID: Int
+    let pokemonID: Int
     
     let nameSubject = BehaviorSubject<String>(value: "")
     let typeSubject = BehaviorSubject<String>(value: "")
@@ -20,6 +20,7 @@ class DetailViewModel {
     
     func fetchPokemonDetail() {
         guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon/\(pokemonID)/") else {
+            // error를 방출하면 스트림이 종료되므로 "Error" 텍스트 값 방출
             nameSubject.onNext("Error")
             typeSubject.onNext("Error")
             heightSubject.onNext("Error")
@@ -31,7 +32,7 @@ class DetailViewModel {
             .subscribe(onSuccess: { [weak self] (response: PokemonDetailResponse) in
                 self?.nameSubject.onNext(response.name)
                 // 타입의 첫번째 값만 가져오기
-                self?.typeSubject.onNext(response.types.first?.name ?? "")
+                self?.typeSubject.onNext(response.types.first?.type.name ?? "")
                 self?.heightSubject.onNext("\(Double(response.height) / 10.0)m")
                 self?.weightSubject.onNext("\(Double(response.weight) / 10.0)kg")
             }, onFailure: { [weak self] _ in
