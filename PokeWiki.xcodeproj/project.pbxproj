@@ -57,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				88611ED72DD1DEDA00C11652 /* PokeWiki */,
-				8861208C2DD56BB800C11652 /* Frameworks */,
 				88611ED62DD1DEDA00C11652 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,13 +67,6 @@
 				88611ED52DD1DEDA00C11652 /* PokeWiki.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		8861208C2DD56BB800C11652 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
