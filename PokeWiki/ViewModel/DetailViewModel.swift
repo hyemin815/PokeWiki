@@ -30,11 +30,18 @@ class DetailViewModel {
         
         NetworkManager.shared.fetch(url: url)
             .subscribe(onSuccess: { [weak self] (response: PokemonDetailResponse) in
-                self?.nameSubject.onNext(response.name)
-                // 타입의 첫번째 값만 가져오기
-                self?.typeSubject.onNext(response.types.first?.type.name ?? "")
-                self?.heightSubject.onNext("\(Double(response.height) / 10.0)m")
-                self?.weightSubject.onNext("\(Double(response.weight) / 10.0)kg")
+                
+                // 한국어로 번역
+                let name = response.name
+                let koreanName = PokemonTranslator.getKoreanName(for: name)
+                self?.nameSubject.onNext("No.\(self?.pokemonID ?? 0) \(koreanName)")
+
+                let typeName = response.types.first?.type.name ?? ""
+                let koreanTypeName = PokemonTypeName.getKoreanType(for: typeName)
+                self?.typeSubject.onNext("타입: \(koreanTypeName)")
+                
+                self?.heightSubject.onNext("키: \(Double(response.height) / 10.0) m")
+                self?.weightSubject.onNext("몸무게: \(Double(response.weight) / 10.0) kg")
             }, onFailure: { [weak self] _ in
                 self?.nameSubject.onNext("Error")
                 self?.typeSubject.onNext("Error")
