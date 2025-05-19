@@ -90,6 +90,20 @@ extension MainViewController: UICollectionViewDelegate {
         let detailVC = DetailViewController(pokemonID: id)
         navigationController?.pushViewController(detailVC, animated: true)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // 얼마나 아래로 스크롤 했는지(y) 거리 정의
+        let offsetY = scrollView.contentOffset.y
+        // 스크롤 가능한 전체 콘텐츠 높이 정의
+        let contentHeight = scrollView.contentSize.height
+        // 현재 화면에서 보이는 영역 높이 정의
+        let height = scrollView.frame.size.height
+        
+        // 스크롤한 거리가 바닥의 200포인트 전에 도달했을 때 viewModel의 fetchPokemonList함수 실행
+        if offsetY > contentHeight - height - 200 {
+            viewModel.fetchPokemonList()
+        }
+    }
 }
 
 
